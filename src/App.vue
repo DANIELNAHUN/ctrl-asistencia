@@ -13,8 +13,15 @@ export default {
   components: { HeaderApp },
   name: 'App',
 
-  data: () => ({
-    //
-  }),
+  data(){
+    return{
+      isLoginPage: false
+    }
+  },
+  watch:{
+    '$route' (to, from){
+      this.isLoginPage = to.name === 'login'
+    }
+  }
 };
 </script>

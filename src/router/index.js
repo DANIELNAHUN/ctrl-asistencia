@@ -14,14 +14,6 @@ const routes = [
     }
   },
   {
-    path: '/about',
-    name: 'about',
-    component: () => import('../views/AboutView.vue'),
-    meta: {
-      needsAuth: true
-    }
-  },
-  {
     path: '/login',
     name: 'login',
     component: () => import('../views/LoginView.vue')

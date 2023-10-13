@@ -23,19 +23,28 @@
         <v-spacer></v-spacer>
       </v-row>
       <v-spacer></v-spacer>
-      <v-btn text fab @click="exit"
-        ><v-icon large color="red">mdi-exit-to-app</v-icon></v-btn
-      >
+      <v-spacer></v-spacer>
+      <div v-if="getUserLogged">
+        <span>{{ getUserLogged.fullname }}</span>
+        <v-btn text fab @click="exit"
+          ><v-icon large color="red">mdi-exit-to-app</v-icon>
+        </v-btn>
+      </div>
     </v-app-bar>
   </div>
 </template>
 <script>
 export default {
+  computed:{
+    getUserLogged() {
+      const id_usuario_scord = parseInt(localStorage.getItem("token"));
+      return this.$store.getters.getUser(id_usuario_scord);
+    },
+  },
   methods: {
     exit() {
       let token = localStorage.getItem("token");
       if (token) {
-        console.log("Credenciales Vencidas. Ingrese de nuevo");
         localStorage.removeItem("token");
         location.reload();
       } else {
