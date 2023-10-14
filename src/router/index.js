@@ -17,7 +17,15 @@ const routes = [
     path: '/login',
     name: 'login',
     component: () => import('../views/LoginView.vue')
-  }
+  },
+  {
+    path: '/horario',
+    name: 'horario',
+    component: () => import('../views/HorariosView.vue'),
+    meta: {
+      needsAuth: true
+    }
+  },
 ]
 
 const isUserLoggedIn = () => {

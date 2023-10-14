@@ -2,24 +2,26 @@
   <div>
     <v-app-bar app color="primary" dark>
       <div class="d-flex align-center">
-        <v-img
-          alt="Cableclub Logo"
-          class="shrink mr-2"
-          contain
-          src="../assets/bhc-logo.jpg"
-          transition="scale-transition"
-          width="45px"
-        />
+        <v-btn icon to="/">
+          <v-img
+            alt="Cableclub Logo"
+            class="shrink mr-2"
+            contain
+            src="../assets/bhc-logo.jpg"
+            transition="scale-transition"
+            width="45px"
+          />
+        </v-btn>
       </div>
       <v-spacer></v-spacer>
       <v-row>
-        <v-btn text to="/"><v-icon left dark></v-icon>Vendedores</v-btn>
+        <v-btn text to="/horario"><v-icon left dark></v-icon>Mi Horario</v-btn>
         <v-spacer></v-spacer>
         <v-btn text to="/supervisores"
-          ><v-icon left dark></v-icon>Supervisores</v-btn
+          ><v-icon left dark></v-icon>Registro Marcaciones</v-btn
         >
         <v-spacer></v-spacer>
-        <v-btn text to="/aux"><v-icon left dark></v-icon>Auxiliares</v-btn>
+        <v-btn text to="/aux"><v-icon left dark></v-icon>Editar mis Datos</v-btn>
         <v-spacer></v-spacer>
       </v-row>
       <v-spacer></v-spacer>

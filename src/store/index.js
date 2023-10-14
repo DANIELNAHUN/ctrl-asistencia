@@ -26,10 +26,15 @@ export default new Vuex.Store({
       {
         usuario_id: 1,
         hora_ingreso: "07:30:00",
-        // hora_almuerzo: "13:00:00",
-        hora_almuerzo: "22:49:00",
+        hora_almuerzo: "13:00:00",
         hora_salida: "17:00:00",
-      }
+      },
+      {
+        usuario_id: 2,
+        hora_ingreso: "07:30:00",
+        hora_almuerzo: "09:45:00",
+        hora_salida: "17:00:00",
+      },
     ],
     registros_asistencias:[
       // id_usuario: number
@@ -49,8 +54,29 @@ export default new Vuex.Store({
     }
   },
   mutations: {
+    updateHoraIngreso(state, { id, hora_ingreso }) {
+      const user = state.horarios.find((u) => u.usuario_id === id)
+      user.hora_ingreso = hora_ingreso
+    },
+    updateHoraAlmuerzo(state, { id, hora_almuerzo }) {
+      const user = state.horarios.find((u) => u.usuario_id === id)
+      user.hora_almuerzo = hora_almuerzo
+    },
+    updateHoraSalida(state, { id, hora_salida }) {
+      const user = state.horarios.find((u) => u.usuario_id === id)
+      user.hora_salida = hora_salida
+    },
   },
   actions: {
+    updateHoraIngreso({ commit }, { id, hora_ingreso }) {
+      commit('updateHoraIngreso', { id, hora_ingreso })
+    },
+    updateHoraAlmuerzo({ commit }, { id, hora_almuerzo }) {
+      commit('updateHoraAlmuerzo', { id, hora_almuerzo })
+    },
+    updateHoraSalida({ commit }, { id, hora_salida }) {
+      commit('updateHoraSalida', { id, hora_salida })
+    },
   },
   modules: {
   }
