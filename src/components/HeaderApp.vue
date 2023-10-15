@@ -17,7 +17,7 @@
       <v-row>
         <v-btn text to="/horario"><v-icon left dark></v-icon>Mi Horario</v-btn>
         <v-spacer></v-spacer>
-        <v-btn text to="/supervisores"
+        <v-btn text to="/registros"
           ><v-icon left dark></v-icon>Registro Marcaciones</v-btn
         >
         <v-spacer></v-spacer>

@@ -26,6 +26,22 @@ const routes = [
       needsAuth: true
     }
   },
+  {
+    path: '/registros',
+    name: 'registros',
+    component: () => import('../views/RegistrosMarcacionesView.vue'),
+    meta: {
+      needsAuth: true
+    }
+  },
+  {
+    path: '/datos',
+    name: 'datos',
+    component: () => import('../views/DatosPersonalesView.vue'),
+    meta: {
+      needsAuth: true
+    }
+  },
 ]
 
 const isUserLoggedIn = () => {
